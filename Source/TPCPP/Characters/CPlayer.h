@@ -7,6 +7,7 @@
 class USpringArmComponent;
 class UCameraComponent;
 class UCAttributeComponent;
+class UCOptionComponent;
 
 UCLASS()
 class TPCPP_API ACPlayer : public ACharacter
@@ -26,7 +27,7 @@ private:
 	//Axis Event
 	void OnMoveForward(float Axis);
 	void OnMoveRight(float Axis);
-	void OnTrun(float Axis);
+	void OnTurn(float Axis);
 	void OnLookUp(float Axis);
 
 	//Action Event
@@ -42,5 +43,8 @@ protected:
 
 	UPROPERTY(VisibleDefaultsOnly, Category = "Components")
 	UCAttributeComponent* AttributeComp;
+
+	UPROPERTY(BlueprintReadOnly, VisibleDefaultsOnly, Category = "Components")
+	UCOptionComponent* OptionComp;
 
 };
